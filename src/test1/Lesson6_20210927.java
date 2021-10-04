@@ -4,7 +4,7 @@ package test1;
 public class Lesson6_20210927 {
     public static void main(String[] args) {
 
-        int result = solution("aabbaccc");
+        int result = solution("abcabcabcabcdededededede");
         System.out.println(result);
     }
     public static int solution(String s){

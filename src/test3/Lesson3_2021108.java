@@ -1,5 +1,7 @@
 package test3;
 
+import java.util.Stack;
+
 public class Lesson3_2021108 {
     public static void main(String[] args){
         int rlt = solution("baabb");
@@ -10,24 +12,14 @@ public class Lesson3_2021108 {
     {
         int answer = -1;
 
-        // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-        System.out.println("Hello Java");
+        Stack<Character> stack = new Stack<>();
 
-        return answer;
-    }
-
-    public static String check(String s){
-
-        for(int i=0; i<s.length()-1; i++){
-            char ch = s.charAt(i);
-            char ch2 = s.charAt(i+1);
-            if(ch == ch2){
-                s = s.substring(i+1);
-                break;
-            }
+        for(int i=0; i<s.length(); i++){
+            char c =s.charAt(i);
+            if(!stack.empty() && stack.peek() == c) stack.pop();
+            else stack.push(c);
         }
 
-
-        return check(s);
+        return stack.isEmpty() ? 0:1;
     }
 }
